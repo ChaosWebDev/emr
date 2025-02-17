@@ -1,15 +1,13 @@
 <?php
 
+use App\Livewire\Home;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', function () {
-        $user = Auth::user();
-        dd($user);
-    })->name('home');
+    Route::get('/', Home::class)->name('home');
 });
 
 
