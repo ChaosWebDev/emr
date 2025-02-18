@@ -24,4 +24,9 @@ class Family extends Model
     {
         return $this->hasMany(User::class);
     }
+
+    public function patients()
+    {
+        return $this->hasMany(Patient::class);
+    }
 }
