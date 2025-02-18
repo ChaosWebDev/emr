@@ -1,0 +1,66 @@
+:root,
+html {
+    font-size: 12pt;
+
+    $bodyBG: white;
+    $bodyFG: black;
+
+    $navBorder: black;
+
+    $aHoverBG: grey;
+    $aHoverFG: black;
+
+    &[data-theme=dark] {
+        $bodyBG: midnightblue;
+        $bodyFG: white;
+
+        $navBorder: white;
+
+        $aHoverBG: cyan;
+        $aHoverFG: black;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+        background: $bodyBG;
+        color: $bodyFG;
+
+        nav {
+            background: inherit;
+            color: inherit;
+            width: 100%;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            border-bottom: 1px solid $navBorder;
+
+            a {
+                display: flex;
+                gap: 0.5rem;
+
+                text-decoration: none;
+                color: inherit;
+
+                padding: 5px 10px;
+
+                &:hover {
+                    background: $aHoverBG;
+                    color: $aHoverFG;
+                }
+
+                &.end {
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+
+}
