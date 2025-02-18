@@ -6,8 +6,6 @@ html {
     $bodyFG: black;
 
     $navBorder: black;
-
-    $aHoverBG: grey;
     $aHoverFG: black;
 
     &[data-theme=dark] {
@@ -15,9 +13,7 @@ html {
         $bodyFG: white;
 
         $navBorder: white;
-
-        $aHoverBG: cyan;
-        $aHoverFG: black;
+        $aHoverFG: cyan;
     }
 
     body {
@@ -28,19 +24,24 @@ html {
         padding: 0;
         box-sizing: border-box;
 
+        display: flex;
+        flex-direction: row;
+
         background: $bodyBG;
         color: $bodyFG;
 
         nav {
             background: inherit;
             color: inherit;
-            width: 100%;
+            width: fit-content;
 
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             flex-wrap: nowrap;
 
-            border-bottom: 1px solid $navBorder;
+            border-right: 1px solid $navBorder;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
 
             a {
                 display: flex;
@@ -52,12 +53,11 @@ html {
                 padding: 5px 10px;
 
                 &:hover {
-                    background: $aHoverBG;
                     color: $aHoverFG;
                 }
 
                 &.end {
-                    margin-left: auto;
+                    margin-top: auto;
                 }
             }
         }
